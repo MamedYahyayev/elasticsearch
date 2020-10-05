@@ -18,7 +18,7 @@ public class RequestEmployee {
 
     private Date birthDate;
 
-    private RequestDepartment department;
+    private RequestDepartmentId department;
 
     private RequestAddress address;
 }

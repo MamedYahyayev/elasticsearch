@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Babek",
+    "surname": "Balaxanli",
+    "salary": 1200.0,
+    "birthDate": "1999-03-21T00:00:00.000+00:00",
+    "department": {
+      "id": 1
+    },
+    "address": {
+      "country": "Azerbaijan",
+      "city": "Baku",
+      "street": "S.Rehim",
+      "zipCode": "123456"
+    }
+  },
+  {
+    "name": "Samir",
+    "surname": "Balaxanli",
+    "salary": 1800.0,
+    "birthDate": "1999-03-21T00:00:00.000+00:00",
+    "department": {
+      "id": 1
+    },
+    "address": {
+      "country": "Azerbaijan",
+      "city": "Baku",
+      "street": "S.Rehim",
+      "zipCode": "123456"
+    }
+  },
+  {
+    "name": "Samir",
+    "surname": "Balaxanli",
+    "salary": 1900.0,
+    "birthDate": "1999-03-21T00:00:00.000+00:00",
+    "department": {
+      "id": 1
+    },
+    "address": {
+      "country": "Azerbaijan",
+      "city": "Baku",
+      "street": "S.Rehim",
+      "zipCode": "123456"
+    }
+  },
+  {
+    "name": "Lale",
+    "surname": "Balaxanli",
+    "salary": 600.0,
+    "birthDate": "1999-03-21T00:00:00.000+00:00",
+    "department": {
+      "id": 1
+    },
+    "address": {
+      "country": "Azerbaijan",
+      "city": "Baku",
+      "street": "S.Rehim",
+      "zipCode": "123456"
+    }
+  },
+  {
+    "name": "Malik",
+    "surname": "Balaxanli",
+    "salary": 2400.0,
+    "birthDate": "1999-03-21T00:00:00.000+00:00",
+    "department": {
+      "id": 1
+    },
+    "address": {
+      "country": "Azerbaijan",
+      "city": "Baku",
+      "street": "S.Rehim",
+      "zipCode": "123456"
+    }
+  },
+  {
+    "name": "Serdar",
+    "surname": "Balaxanli",
+    "salary": 3000.0,
+    "birthDate": "1999-03-21T00:00:00.000+00:00",
+    "department": {
+      "id": 1
+    },
+    "address": {
+      "country": "Azerbaijan",
+      "city": "Baku",
+      "street": "S.Rehim",
+      "zipCode": "123456"
+    }
+  },
+  {
+    "name": "Ayten",
+    "surname": "Balaxanli",
+    "salary": 400.0,
+    "birthDate": "1999-03-21T00:00:00.000+00:00",
+    "department": {
+      "id": 1
+    },
+    "address": {
+      "country": "Azerbaijan",
+      "city": "Baku",
+      "street": "S.Rehim",
+      "zipCode": "123456"
+    }
+  }
+]

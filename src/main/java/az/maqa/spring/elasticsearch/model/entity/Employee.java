@@ -31,7 +31,7 @@ public class Employee {
 
     private Date birthDate;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JoinColumn(name = "department_id")
     private Department department;
 }

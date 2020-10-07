@@ -6,6 +6,7 @@ import az.maqa.spring.elasticsearch.response.ResponseEmployee;
 import az.maqa.spring.elasticsearch.service.jpa.EmployeeService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Type;
@@ -66,6 +67,19 @@ public class EmployeeController {
     public List<ResponseEmployee> getEmployeeBySurnameIgnoreCase(String surname) {
         List<EmployeeDto> employeeDtoList = employeeService.getEmployeeBySurnameIgnoreCase(surname);
         Type listType = new TypeToken<List<ResponseEmployee>>() {
+        }.getType();
+        return modelMapper.map(employeeDtoList, listType);
+    }
+
+    @GetMapping
+    public Page<ResponseEmployee> findAllEmployeesByPage(String page, String size) {
+        int reqPage = 0, reqSize = 5;
+        if (size != null && page != null) {
+            reqPage = Integer.parseInt(page);
+            reqSize = Integer.parseInt(size);
+        }
+        Page<EmployeeDto> employeeDtoList = employeeService.findAllEmployeeByPage(reqPage, reqSize);
+        Type listType = new TypeToken<Page<ResponseEmployee>>() {
         }.getType();
         return modelMapper.map(employeeDtoList, listType);
     }

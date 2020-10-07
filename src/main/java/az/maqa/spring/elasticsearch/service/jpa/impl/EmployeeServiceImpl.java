@@ -8,6 +8,9 @@ import az.maqa.spring.elasticsearch.repository.jpa.EmployeeRepository;
 import az.maqa.spring.elasticsearch.service.jpa.EmployeeService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Type;
@@ -73,5 +76,14 @@ public class EmployeeServiceImpl implements EmployeeService {
         Type listType = new TypeToken<List<EmployeeDto>>() {
         }.getType();
         return modelMapper.map(employees, listType);
+    }
+
+    @Override
+    public Page<EmployeeDto> findAllEmployeeByPage(int page, int size) {
+        Pageable pageRequest = PageRequest.of(page, size);
+        Page<Employee> employeePage = repository.findAll(pageRequest);
+        Type listType = new TypeToken<Page<EmployeeDto>>() {
+        }.getType();
+        return modelMapper.map(employeePage, listType);
     }
 }

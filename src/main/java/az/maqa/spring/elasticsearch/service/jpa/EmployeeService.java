@@ -1,6 +1,7 @@
 package az.maqa.spring.elasticsearch.service.jpa;
 
 import az.maqa.spring.elasticsearch.dto.EmployeeDto;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -16,4 +17,6 @@ public interface EmployeeService {
     List<EmployeeDto> getAllEmployeesBySalaryGreaterThan(Double salary);
 
     List<EmployeeDto> getEmployeeBySurnameIgnoreCase(String surname);
+
+    Page<EmployeeDto> findAllEmployeeByPage(int page, int size);
 }

@@ -1,5 +1,6 @@
 package az.maqa.spring.elasticsearch.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,6 +28,7 @@ public class Department {
     private String departmentCode;
 
     @OneToMany(mappedBy = "department")
+    @JsonBackReference
     private List<Employee> employees;
 
 }

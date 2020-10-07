@@ -1,5 +1,6 @@
 package az.maqa.spring.elasticsearch.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,5 +34,6 @@ public class Employee {
 
     @ManyToOne
     @JoinColumn(name = "department_id")
+    @JsonManagedReference
     private Department department;
 }

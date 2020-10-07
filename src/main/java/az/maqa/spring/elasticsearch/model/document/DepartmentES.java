@@ -9,7 +9,6 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class DepartmentES {
 
     @Field(name = "department_name", type = FieldType.Text)

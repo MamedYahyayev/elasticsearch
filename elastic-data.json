@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Zabit",
+    "surname": "Balaxanli",
+    "salary": 2100,
+    "birthDate": "1999-03-21",
+    "address": {
+      "country": "Azerbaijan",
+      "city": "Baku",
+      "street": "S.Rehim",
+      "zipCode": "123456"
+    },
+    "department": {
+      "departmentName": "B",
+      "departmentCode": "Z345PL8"
+    }
+  },
+  {
+    "name": "Samir",
+    "surname": "Kurdaxanli",
+    "salary": 2400,
+    "birthDate": "1999-03-21",
+    "address": {
+      "country": "Azerbaijan",
+      "city": "Baku",
+      "street": "S.Rehim",
+      "zipCode": "123456"
+    },
+    "department": {
+      "departmentName": "B",
+      "departmentCode": "Z345PL8"
+    }
+  },
+  {
+    "name": "Qasim",
+    "surname": "Balaxanli",
+    "salary": 800,
+    "birthDate": "1999-03-21",
+    "address": {
+      "country": "Azerbaijan",
+      "city": "Baku",
+      "street": "S.Rehim",
+      "zipCode": "123456"
+    },
+    "department": {
+      "departmentName": "B",
+      "departmentCode": "Z345PL8"
+    }
+  },
+  {
+    "name": "Ayten",
+    "surname": "Samirxanli",
+    "salary": 920.0,
+    "birthDate": "1999-03-21T00:00:00.000+00:00",
+    "department": {
+      "departmentName": "B",
+      "departmentCode": "Z345PL8"
+    },
+    "address": {
+      "country": "Azerbaijan",
+      "city": "Baku",
+      "street": "S.Rehim",
+      "zipCode": "123456"
+    }
+  },
+  {
+    "name": "Babek",
+    "surname": "Encirli",
+    "salary": 3000.0,
+    "birthDate": "1999-03-21T00:00:00.000+00:00",
+    "department": {
+      "departmentName": "B",
+      "departmentCode": "Z345PL8"
+    },
+    "address": {
+      "country": "Azerbaijan",
+      "city": "Baku",
+      "street": "S.Rehim",
+      "zipCode": "123456"
+    }
+  },
+  {
+    "name": "Lale",
+    "surname": "Balaxanli",
+    "salary": 600.0,
+    "birthDate": "1999-03-21T00:00:00.000+00:00",
+    "department": {
+      "departmentName": "B",
+      "departmentCode": "Z345PL8"
+    },
+    "address": {
+      "country": "Azerbaijan",
+      "city": "Baku",
+      "street": "S.Rehim",
+      "zipCode": "123456"
+    }
+  },
+  {
+    "name": "Samir",
+    "surname": "Budurlu",
+    "salary": 1750.0,
+    "birthDate": "1999-03-21T00:00:00.000+00:00",
+    "department": {
+      "departmentName": "B",
+      "departmentCode": "Z345PL8"
+    },
+    "address": {
+      "country": "Azerbaijan",
+      "city": "Baku",
+      "street": "S.Rehim",
+      "zipCode": "123456"
+    }
+  }
+]

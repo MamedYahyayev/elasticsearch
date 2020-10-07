@@ -29,7 +29,7 @@ public class EmployeeES {
     @Field(name = "salary", type = FieldType.Double)
     private Double salary;
 
-    @Field(name = "birth_date", type = FieldType.Date, format = DateFormat.basic_date)
+    @Field(type = FieldType.Date, format = DateFormat.custom, pattern = "uuuu-MM-dd'T'HH:mm:ss.SSSZZ")
     private Date birthDate;
 
     @Field(name = "address", type = FieldType.Nested)

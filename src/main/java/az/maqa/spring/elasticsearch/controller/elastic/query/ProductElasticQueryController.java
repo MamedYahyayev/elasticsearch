@@ -8,9 +8,12 @@ import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.update.UpdateResponse;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.List;
 
 @RestController
 @RequestMapping("/elastic/query/product")
@@ -45,89 +48,96 @@ public class ProductElasticQueryController {
         return productElasticQueryService.deleteProductByProductId(id);
     }
 
-
-
-   /* @PostMapping("/saveAll")
-    public List<ResponseElasticEmployee> createAllEmployee(@RequestBody List<RequestElasticEmployee> requestElasticEmployeeList) {
-        Type employeeElasticDtoListType = new TypeToken<List<EmployeeElasticDto>>() {
-        }.getType();
-
-        List<EmployeeElasticDto> employeeElasticDtoList = modelMapper.map(requestElasticEmployeeList, employeeElasticDtoListType);
-
-        List<EmployeeElasticDto> savedEmployeeElasticDtoList = employeeElasticService.createAllEmployee(employeeElasticDtoList);
-
-        Type listType = new TypeToken<List<ResponseElasticEmployee>>() {
-        }.getType();
-
-        return modelMapper.map(savedEmployeeElasticDtoList, listType);
-    }*/
-
-    /*@GetMapping("/findByName/{name}")
-    public List<ResponseElasticEmployee> getElasticEmployeeByName(@PathVariable("name") String name) {
-        List<EmployeeElasticDto> employeeElasticDtoList = employeeElasticService.getElasticEmployeeByName(name);
-        Type listType = new TypeToken<List<ResponseElasticEmployee>>() {
-        }.getType();
-        return modelMapper.map(employeeElasticDtoList, listType);
-    }
-
-    @GetMapping("/fullname")
-    public List<ResponseElasticEmployee> getAllElasticEmployeeByNameAndSurname(String name, String surname) {
-        List<EmployeeElasticDto> employeeElasticDtoList = employeeElasticService.getElasticEmployeeByNameAndSurname(name, surname);
-        Type listType = new TypeToken<List<ResponseElasticEmployee>>() {
-        }.getType();
-        return modelMapper.map(employeeElasticDtoList, listType);
-    }
-
-    @GetMapping("/salary")
-    public List<ResponseElasticEmployee> getAllElasticEmployeeByNameAndSurname(Double minSalary, Double maxSalary) {
-        List<EmployeeElasticDto> employeeElasticDtoList = employeeElasticService.getElasticEmployeeByBetweenSalary(minSalary, maxSalary);
-        Type listType = new TypeToken<List<ResponseElasticEmployee>>() {
-        }.getType();
-        return modelMapper.map(employeeElasticDtoList, listType);
-    }
-
-    @GetMapping("/fullname/like")
-    public List<ResponseElasticEmployee> getAllElasticEmployeeByNameAndSurnameWithLike(String name, String surname) {
-        List<EmployeeElasticDto> employeeElasticDtoList = employeeElasticService.getElasticEmployeeByNameAndSurnameWithLike(name, surname);
-        Type listType = new TypeToken<List<ResponseElasticEmployee>>() {
-        }.getType();
-        return modelMapper.map(employeeElasticDtoList, listType);
-    }
-
-    @GetMapping("/salary/{amount}")
-    public List<ResponseElasticEmployee> getAllElasticEmployeeByNameAndSurname(@PathVariable("amount") Double amount) {
-        List<EmployeeElasticDto> employeeElasticDtoList = employeeElasticService.getElasticEmployeeByGreaterThanSalary(amount);
-        Type listType = new TypeToken<List<ResponseElasticEmployee>>() {
-        }.getType();
-        return modelMapper.map(employeeElasticDtoList, listType);
-    }
-
-    @GetMapping("/surname/{surname}")
-    public List<ResponseElasticEmployee> getAllElasticEmployeeByNameAndSurnameWithLike(@PathVariable("surname") String surname) {
-        List<EmployeeElasticDto> employeeElasticDtoList = employeeElasticService.getElasticEmployeeBySurnameIgnoreCase(surname);
-        Type listType = new TypeToken<List<ResponseElasticEmployee>>() {
-        }.getType();
-        return modelMapper.map(employeeElasticDtoList, listType);
-    }
-
-    @GetMapping("/findByDepartment/{departmentName}")
-    public List<ResponseElasticEmployee> getAllElasticEmployeeByDepartmentName(@PathVariable("departmentName") String departmentName) {
-        List<EmployeeElasticDto> employeeElasticDtoList = employeeElasticService.getElasticEmployeeByDepartmentName(departmentName);
-        Type listType = new TypeToken<List<ResponseElasticEmployee>>() {
-        }.getType();
-        return modelMapper.map(employeeElasticDtoList, listType);
-    }
-
     @GetMapping
-    public Page<ResponseElasticEmployee> getAllElasticEmployeeByPage(String page, String size) {
+    public List<ResponseElasticQueryProduct> findAllProducts() throws IOException {
+        List<ProductElasticQueryDto> allProducts = productElasticQueryService.getAllProducts();
+        Type listType = new TypeToken<List<ResponseElasticQueryProduct>>() {
+        }.getType();
+        return modelMapper.map(allProducts, listType);
+    }
+
+    @GetMapping(value = "/findByName/{name}")
+    public List<ResponseElasticQueryProduct> findAllProductsByProductName(@PathVariable("name") String name) throws IOException {
+        List<ProductElasticQueryDto> allProducts = productElasticQueryService.getAllProductsByName(name);
+        Type listType = new TypeToken<List<ResponseElasticQueryProduct>>() {
+        }.getType();
+        return modelMapper.map(allProducts, listType);
+    }
+
+    @GetMapping(value = "/findByProductCode/{code}")
+    public List<ResponseElasticQueryProduct> findAllProductsByProductCode(@PathVariable("code") String code) throws IOException {
+        List<ProductElasticQueryDto> allProducts = productElasticQueryService.findAllProductsByProductCode(code);
+        Type listType = new TypeToken<List<ResponseElasticQueryProduct>>() {
+        }.getType();
+        return modelMapper.map(allProducts, listType);
+    }
+
+    @GetMapping(value = "/findByAmount/{amount}")
+    public List<ResponseElasticQueryProduct> findAllProductsByAmount(@PathVariable("amount") String amount) throws IOException {
+        List<ProductElasticQueryDto> allProducts = productElasticQueryService.findAllProductsByAmount(amount);
+        Type listType = new TypeToken<List<ResponseElasticQueryProduct>>() {
+        }.getType();
+        return modelMapper.map(allProducts, listType);
+    }
+
+    @PostMapping(value = "/search")
+    public List<ResponseElasticQueryProduct> searchMultiField(@RequestBody RequestElasticQueryProduct product) throws IOException {
+        List<ProductElasticQueryDto> allProducts = productElasticQueryService.searchMultiField(product);
+        Type listType = new TypeToken<List<ResponseElasticQueryProduct>>() {
+        }.getType();
+        return modelMapper.map(allProducts, listType);
+    }
+
+    @GetMapping("/betweenSalary")
+    public List<ResponseElasticQueryProduct> findProductByBetweenSalary(Double minSalary, Double maxSalary) throws IOException {
+        List<ProductElasticQueryDto> allProducts = productElasticQueryService.findProductByBetweenSalary(minSalary, maxSalary);
+        Type listType = new TypeToken<List<ResponseElasticQueryProduct>>() {
+        }.getType();
+        return modelMapper.map(allProducts, listType);
+    }
+
+    @GetMapping("/greaterThanSalary/{salary}")
+    public List<ResponseElasticQueryProduct> findProductByGreaterThanSalary(@PathVariable Double salary) throws IOException {
+        List<ProductElasticQueryDto> allProducts = productElasticQueryService.findProductByGreaterThanSalary(salary);
+        Type listType = new TypeToken<List<ResponseElasticQueryProduct>>() {
+        }.getType();
+        return modelMapper.map(allProducts, listType);
+    }
+
+    @GetMapping("/lessThanSalary/{salary}")
+    public List<ResponseElasticQueryProduct> findProductByLessThanSalary(@PathVariable Double salary) throws IOException {
+        List<ProductElasticQueryDto> allProducts = productElasticQueryService.findProductByLessThanSalary(salary);
+        Type listType = new TypeToken<List<ResponseElasticQueryProduct>>() {
+        }.getType();
+        return modelMapper.map(allProducts, listType);
+    }
+
+    @GetMapping("/orderBySalaryAsc")
+    public List<ResponseElasticQueryProduct> orderBySalary() throws IOException {
+        List<ProductElasticQueryDto> allProducts = productElasticQueryService.orderBySalaryAsc();
+        Type listType = new TypeToken<List<ResponseElasticQueryProduct>>() {
+        }.getType();
+        return modelMapper.map(allProducts, listType);
+    }
+
+    @GetMapping("/orderBySalaryDesc")
+    public List<ResponseElasticQueryProduct> orderBySalaryDesc() throws IOException {
+        List<ProductElasticQueryDto> allProducts = productElasticQueryService.orderBySalaryDesc();
+        Type listType = new TypeToken<List<ResponseElasticQueryProduct>>() {
+        }.getType();
+        return modelMapper.map(allProducts, listType);
+    }
+
+    @GetMapping("/pageRequest")
+    public List<ResponseElasticQueryProduct> getAllProductsByPageable(String page, String size) throws IOException {
         int reqPage = 0, reqSize = 5;
         if (size != null && page != null) {
             reqPage = Integer.parseInt(page);
             reqSize = Integer.parseInt(size);
         }
-        Page<EmployeeElasticDto> employeeElasticDtoList = employeeElasticService.findAllElasticEmployeeByPage(reqPage, reqSize);
-        Type listType = new TypeToken<Page<ResponseElasticEmployee>>() {
+        List<ProductElasticQueryDto> productDtoList = productElasticQueryService.getAllProductsByPageable(reqPage, reqSize);
+        Type listType = new TypeToken<List<ResponseElasticQueryProduct>>() {
         }.getType();
-        return modelMapper.map(employeeElasticDtoList, listType);
-    }*/
+        return modelMapper.map(productDtoList, listType);
+    }
 }

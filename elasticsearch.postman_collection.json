@@ -1,0 +1,871 @@
+{
+	"info": {
+		"_postman_id": "4fdb1d06-1b21-4707-a975-86dc83fffb1b",
+		"name": "elasticsearch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8088/employee/a",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/employee/a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"employee",
+						"a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create all elastic employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Zabit\",\r\n        \"surname\": \"Balaxanli\",\r\n        \"salary\": 2100,\r\n        \"birthDate\": \"1999-03-21\",\r\n        \"address\": {\r\n            \"country\": \"Azerbaijan\",\r\n            \"city\": \"Baku\",\r\n            \"street\": \"S.Rehim\",\r\n            \"zipCode\": \"123456\"\r\n        },\r\n        \"department\": {\r\n            \"departmentName\": \"B\",\r\n            \"departmentCode\": \"Z345PL8\"\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Samir\",\r\n        \"surname\": \"Kurdaxanli\",\r\n        \"salary\": 2400,\r\n        \"birthDate\": \"1999-03-21\",\r\n        \"address\": {\r\n            \"country\": \"Azerbaijan\",\r\n            \"city\": \"Baku\",\r\n            \"street\": \"S.Rehim\",\r\n            \"zipCode\": \"123456\"\r\n        },\r\n        \"department\": {\r\n            \"departmentName\": \"B\",\r\n            \"departmentCode\": \"Z345PL8\"\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Qasim\",\r\n        \"surname\": \"Balaxanli\",\r\n        \"salary\": 800,\r\n        \"birthDate\": \"1999-03-21\",\r\n        \"address\": {\r\n            \"country\": \"Azerbaijan\",\r\n            \"city\": \"Baku\",\r\n            \"street\": \"S.Rehim\",\r\n            \"zipCode\": \"123456\"\r\n        },\r\n        \"department\": {\r\n            \"departmentName\": \"B\",\r\n            \"departmentCode\": \"Z345PL8\"\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Ayten\",\r\n        \"surname\": \"Samirxanli\",\r\n        \"salary\": 920.0,\r\n        \"birthDate\": \"1999-03-21T00:00:00.000+00:00\",\r\n        \"department\": {\r\n            \"departmentName\": \"B\",\r\n            \"departmentCode\": \"Z345PL8\"\r\n        },\r\n        \"address\": {\r\n            \"country\": \"Azerbaijan\",\r\n            \"city\": \"Baku\",\r\n            \"street\": \"S.Rehim\",\r\n            \"zipCode\": \"123456\"\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Babek\",\r\n        \"surname\": \"Encirli\",\r\n        \"salary\": 3000.0,\r\n        \"birthDate\": \"1999-03-21T00:00:00.000+00:00\",\r\n        \"department\": {\r\n            \"departmentName\": \"B\",\r\n            \"departmentCode\": \"Z345PL8\"\r\n        },\r\n        \"address\": {\r\n            \"country\": \"Azerbaijan\",\r\n            \"city\": \"Baku\",\r\n            \"street\": \"S.Rehim\",\r\n            \"zipCode\": \"123456\"\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Lale\",\r\n        \"surname\": \"Balaxanli\",\r\n        \"salary\": 600.0,\r\n        \"birthDate\": \"1999-03-21T00:00:00.000+00:00\",\r\n        \"department\": {\r\n            \"departmentName\": \"B\",\r\n            \"departmentCode\": \"Z345PL8\"\r\n        },\r\n        \"address\": {\r\n            \"country\": \"Azerbaijan\",\r\n            \"city\": \"Baku\",\r\n            \"street\": \"S.Rehim\",\r\n            \"zipCode\": \"123456\"\r\n        }\r\n    },\r\n    {\r\n        \"name\": \"Samir\",\r\n        \"surname\": \"Budurlu\",\r\n        \"salary\": 1750.0,\r\n        \"birthDate\": \"1999-03-21T00:00:00.000+00:00\",\r\n        \"department\": {\r\n            \"departmentName\": \"B\",\r\n            \"departmentCode\": \"Z345PL8\"\r\n        },\r\n        \"address\": {\r\n            \"country\": \"Azerbaijan\",\r\n            \"city\": \"Baku\",\r\n            \"street\": \"S.Rehim\",\r\n            \"zipCode\": \"123456\"\r\n        }\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/elastic/employee/saveAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"employee",
+						"saveAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Babek\",\r\n    \"surname\": \"Balaxanli\",\r\n    \"salary\": 1200.0,\r\n    \"birthDate\": \"1999-03-21T00:00:00.000+00:00\",\r\n    \"department\": {\r\n        \"id\": 1\r\n    },\r\n    \"address\": {\r\n        \"country\": \"Azerbaijan\",\r\n        \"city\": \"Baku\",\r\n        \"street\": \"S.Rehim\",\r\n        \"zipCode\": \"123456\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create department",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"departmentName\": \"Z\",\r\n    \"departmentCode\": \"A45612\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/department",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"department"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get employee by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/employee/search?name=Samir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"employee",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Samir"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "between salary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/employee?minSalary=300&maxSalary=3200",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"employee"
+					],
+					"query": [
+						{
+							"key": "minSalary",
+							"value": "300"
+						},
+						{
+							"key": "maxSalary",
+							"value": "3200"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get employee by surname",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/employee/searchSurname?surname=balaXanLi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"employee",
+						"searchSurname"
+					],
+					"query": [
+						{
+							"key": "surname",
+							"value": "balaXanLi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "greater than salary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/employee/salary?salary=1500",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"employee",
+						"salary"
+					],
+					"query": [
+						{
+							"key": "salary",
+							"value": "1500"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get employee by name and surname with like",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/employee/fullname?name=k&surname=B",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"employee",
+						"fullname"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "k"
+						},
+						{
+							"key": "surname",
+							"value": "B"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find all employee by page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create elastic employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Gulender\",\r\n    \"surname\": \"Derbendli\",\r\n    \"salary\": 9000,\r\n    \"birthDate\": \"1999-03-21\",\r\n    \"address\": {\r\n        \"country\": \"Azerbaijan\",\r\n        \"city\": \"Baku\",\r\n        \"street\": \"S.Rehim\",\r\n        \"zipCode\": \"123456\"\r\n    },\r\n    \"department\": {\r\n        \"departmentName\": \"B\",\r\n        \"departmentCode\": \"Z345PL8\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/elastic/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by elastic emp name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/employee/findByName/Babek",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"employee",
+						"findByName",
+						"Babek"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by elastic emp name and surname",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/employee/fullname?name=Qasim&surname=Balaxanli",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"employee",
+						"fullname"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Qasim"
+						},
+						{
+							"key": "surname",
+							"value": "Balaxanli"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by elastic emp between salary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/employee/salary?minSalary=1800&maxSalary=2400",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"employee",
+						"salary"
+					],
+					"query": [
+						{
+							"key": "minSalary",
+							"value": "1800"
+						},
+						{
+							"key": "maxSalary",
+							"value": "2400"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by elastic emp name and surname with like operator",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/employee/fullname/like?name=a&surname=B",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"employee",
+						"fullname",
+						"like"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "a"
+						},
+						{
+							"key": "surname",
+							"value": "B"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by elastic emp salary greater than",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/employee/salary/2200",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"employee",
+						"salary",
+						"2200"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by elastic emp surname ignore case",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/employee/surname/sAmIrxanli",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"employee",
+						"surname",
+						"sAmIrxanli"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find all elastic emp by page request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/employee?page=0&size=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"employee"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find elastic employee by department name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/employee/findByDepartment/B",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"employee",
+						"findByDepartment",
+						"B"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save product by index query",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"Xiaomi Mi8\",\r\n    \"productCode\": \"OP194CFQ\",\r\n    \"amount\": 800\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/elastic/query/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"query",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product by get query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/query/product/e43b1b2a-f576-4501-afd8-813fb8cb33cf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"query",
+						"product",
+						"e43b1b2a-f576-4501-afd8-813fb8cb33cf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update product by update query",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"Iphone 11 Pro\",\r\n    \"productCode\": \"AE345KL\",\r\n    \"amount\": 1800.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/elastic/query/product/e43b1b2a-f576-4501-afd8-813fb8cb33cf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"query",
+						"product",
+						"e43b1b2a-f576-4501-afd8-813fb8cb33cf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete product by delete query",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/query/product/85ad86dc-8dcf-4e4f-af04-f1a43d4c7b1a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"query",
+						"product",
+						"85ad86dc-8dcf-4e4f-af04-f1a43d4c7b1a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all product by search query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/query/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"query",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find product by amount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/query/product/findByAmount/2500",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"query",
+						"product",
+						"findByAmount",
+						"2500"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find product by product code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/query/product/findByProductCode/GH345DEF",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"query",
+						"product",
+						"findByProductCode",
+						"GH345DEF"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find product by product name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/query/product/findByName/Samsung S20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"query",
+						"product",
+						"findByName",
+						"Samsung S20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search product by all product field",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"Samsung\",\r\n    \"productCode\": \"GH345DEF\",\r\n    \"amount\": 2500.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/elastic/query/product/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"query",
+						"product",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find product amount by between salary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/query/product/betweenSalary?minSalary=800&maxSalary=2000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"query",
+						"product",
+						"betweenSalary"
+					],
+					"query": [
+						{
+							"key": "minSalary",
+							"value": "800"
+						},
+						{
+							"key": "maxSalary",
+							"value": "2000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find product amont greater than salary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/query/product/greaterThanSalary/1200",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"query",
+						"product",
+						"greaterThanSalary",
+						"1200"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find produc amount less than salary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/query/product/lessThanSalary/2000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"query",
+						"product",
+						"lessThanSalary",
+						"2000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order by product salary asc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/query/product/orderBySalary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"query",
+						"product",
+						"orderBySalary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find product by page request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/elastic/query/product/pageRequest?page=5&size=25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"elastic",
+						"query",
+						"product",
+						"pageRequest"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "5"
+						},
+						{
+							"key": "size",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
